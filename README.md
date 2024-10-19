@@ -1,5 +1,5 @@
-![image](https://github.com/user-attachments/assets/b6e7f34c-95d3-4597-82ef-6c8022c10586)### EX7 Implementation of Link Analysis using HITS Algorithm
-### DATE: 3.10.24
+### EX7 Implementation of Link Analysis using HITS Algorithm
+### DATE: 19.10.24
 ### AIM: To implement Link Analysis using HITS Algorithm in Python.
 ### Description:
 <div align = "justify">

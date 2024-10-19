@@ -1,4 +1,4 @@
-### EX7 Implementation of Link Analysis using HITS Algorithm
+![image](https://github.com/user-attachments/assets/b6e7f34c-95d3-4597-82ef-6c8022c10586)### EX7 Implementation of Link Analysis using HITS Algorithm
 ### DATE: 3.10.24
 ### AIM: To implement Link Analysis using HITS Algorithm in Python.
 ### Description:
@@ -33,7 +33,7 @@ in a network of web pages based on the structure of the links between them.
 
 ### Program:
 
-```python
+```
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -67,15 +67,32 @@ def hits_algorithm(adjacency_matrix, max_iterations=100, tol=1.0e-6):
 # For simplicity, using a random adjacency matrix
 adj_matrix = np.array([
     [0, 1, 1],
-    [1, 0, 0],
-    [1, 0, 0]
+    [0, 0, 1],
+    [1, 1, 0]
 ])
 
 # Run HITS algorithm
 authority, hub = hits_algorithm(adj_matrix)
 for i in range(len(authority)):
     print(f"Node {i}: Authority Score = {authority[i]:.4f}, Hub Score = {hub[i]:.4f}")
+    
+i=0
+j=1
+for i in range(len(authority)):
+    
+    for j in range(len(authority)):
+        if(authority[i]>=authority[j]):
+            out=authority[i];
+            authority[i]=authority[j]
+            authority[j]=out
+        if(hub[i]>hub[j]):
+            out=hub[i]
+            hub[i]=hub[j]
+            hub[j]=out
 
+print("Ranking based on Hub Scores:")
+for i in range(len(authority)):
+    print("Rank" ,i+1,hub[i])
 # bar chart of authority vs hub scores
 
 nodes = np.arange(len(authority))
@@ -93,7 +110,7 @@ plt.show()
 ```
 
 ### Output:
-![image](https://github.com/user-attachments/assets/77b00172-9015-4de1-8980-60783c3b0ff7)
+![Screenshot 2024-10-19 141034](https://github.com/user-attachments/assets/b1b3660b-c532-4c6c-bf63-31ca7b1b6034)
 
 
 ### Result:
